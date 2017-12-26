@@ -10,7 +10,6 @@ import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springboot.sample.dao.IScoreDao;
 import org.springboot.sample.security.MyShiroRealm;
 import org.springboot.sample.service.StudentService;
 import org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator;
@@ -101,7 +100,7 @@ public class ShiroConfiguration {
      * @author SHANHY
      * @create  2016年1月14日
      */
-    private void loadShiroFilterChain(ShiroFilterFactoryBean shiroFilterFactoryBean, StudentService stuService, IScoreDao scoreDao){
+    private void loadShiroFilterChain(ShiroFilterFactoryBean shiroFilterFactoryBean, StudentService stuService){
         /////////////////////// 下面这些规则配置最好配置到配置文件中 ///////////////////////
         Map<String, String> filterChainDefinitionMap = new LinkedHashMap<String, String>();
         // authc：该过滤器下的页面必须验证后才能访问，它是Shiro内置的一个拦截器org.apache.shiro.web.filter.authc.FormAuthenticationFilter
@@ -129,7 +128,7 @@ public class ShiroConfiguration {
      * @create  2016年1月14日
      */
     @Bean(name = "shiroFilter")
-    public ShiroFilterFactoryBean getShiroFilterFactoryBean(DefaultWebSecurityManager securityManager, StudentService stuService, IScoreDao scoreDao) {
+    public ShiroFilterFactoryBean getShiroFilterFactoryBean(DefaultWebSecurityManager securityManager, StudentService stuService) {
 
         ShiroFilterFactoryBean shiroFilterFactoryBean = new ShiroFilterFactoryBean();
         // 必须设置 SecurityManager  
@@ -140,7 +139,7 @@ public class ShiroConfiguration {
         shiroFilterFactoryBean.setSuccessUrl("/user");
         shiroFilterFactoryBean.setUnauthorizedUrl("/403");
 
-        loadShiroFilterChain(shiroFilterFactoryBean, stuService, scoreDao);
+        loadShiroFilterChain(shiroFilterFactoryBean, stuService);
         return shiroFilterFactoryBean;
     }
 

@@ -15,7 +15,6 @@ import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springboot.sample.dao.IScoreDao;
 import org.springboot.sample.service.StudentService;
 import org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
@@ -117,7 +116,7 @@ public class ShiroCasConfiguration {
      * @author SHANHY
      * @create  2016年1月14日
      */
-    private void loadShiroFilterChain(ShiroFilterFactoryBean shiroFilterFactoryBean, StudentService stuService, IScoreDao scoreDao){
+    private void loadShiroFilterChain(ShiroFilterFactoryBean shiroFilterFactoryBean, StudentService stuService){
         /////////////////////// 下面这些规则配置最好配置到配置文件中 ///////////////////////
         Map<String, String> filterChainDefinitionMap = new LinkedHashMap<String, String>();
 
@@ -165,7 +164,7 @@ public class ShiroCasConfiguration {
      * @create  2016年1月14日
      */
     @Bean(name = "shiroFilter")
-    public ShiroFilterFactoryBean getShiroFilterFactoryBean(DefaultWebSecurityManager securityManager, CasFilter casFilter, StudentService stuService, IScoreDao scoreDao) {
+    public ShiroFilterFactoryBean getShiroFilterFactoryBean(DefaultWebSecurityManager securityManager, CasFilter casFilter, StudentService stuService) {
         ShiroFilterFactoryBean shiroFilterFactoryBean = new ShiroFilterFactoryBean();
         // 必须设置 SecurityManager  
         shiroFilterFactoryBean.setSecurityManager(securityManager);
@@ -179,7 +178,7 @@ public class ShiroCasConfiguration {
         filters.put("casFilter", casFilter);
         shiroFilterFactoryBean.setFilters(filters);
 
-        loadShiroFilterChain(shiroFilterFactoryBean, stuService, scoreDao);
+        loadShiroFilterChain(shiroFilterFactoryBean, stuService);
         return shiroFilterFactoryBean;
     }
 
