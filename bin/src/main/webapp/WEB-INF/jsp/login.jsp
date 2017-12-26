@@ -16,7 +16,6 @@
         <link rel="stylesheet" href="assets/css/reset.css">
         <link rel="stylesheet" href="assets/css/supersized.css">
         <link rel="stylesheet" href="assets/css/style.css">
-		<link rel="stylesheet" type="text/css" href="css/style.css">
 
         <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
         <!--[if lt IE 9]>
@@ -27,9 +26,6 @@
         <div class="page-container">
     
 		<h1>登录</h1>
-		<div id="wrapper">
-			<div class="zoombie"></div>
-		</div>
         <form:form action="${pageContext.request.contextPath }/login" commandName="user" method="post">
 		<form:input path="username"  placeholder="用户名"/>
         <form:errors path="username" cssClass="error" />

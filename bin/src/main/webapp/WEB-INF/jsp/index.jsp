@@ -7,6 +7,8 @@ String webPath = getServletContext().getRealPath("/WEB-INF/");
 	<meta charset="UTF-8">
 	<title>The OldBoss Game Website</title>
 	<link rel="stylesheet" href="css/style.css" type="text/css">
+	<%@ include file="../views/common/taglibs.jsp"%>
+<%@ include file="../views/common/resources.jsp"%>
 	<script>
 	<%-- var webPath="<%=webPath%>"; --%>
 	var pageUrl = "${ctx}/notice/queryNotice/";
