@@ -845,7 +845,7 @@ body {
 .zoombie {
 	/*Our png sprite is 2000px x 312px, then each frame is 200px x 312px*/
 	position: fixed;
-    right: 400px;
+    right: 20%;
     width: 200px;
     height: 312px;
     background-image: url("../img/walkingdead.png");
