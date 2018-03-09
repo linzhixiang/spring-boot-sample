@@ -126,14 +126,17 @@
 			<version>1.2.6.RELEASE</version>
 		</dependency>
 		<dependency>  
+			<!-- 热启动，需要编译之后，eclipse自动编译，idea需要ct f9 -->
        		<groupId>org.springframework.boot</groupId>  
-      		 <artifactId>spring-boot-devtools</artifactId>   
+      		 <artifactId>spring-boot-devtools</artifactId>
+      		 <optional>true</optional>   
   		 </dependency>  
   		 <dependency>
    			 <groupId>com.zaxxer</groupId>
    			 <artifactId>HikariCP</artifactId>
     		 <!-- 版本号可以不用指定，Spring Boot会选用合适的版本 -->
 			 </dependency>
+			 
 	</dependencies>
 <repositories>  
     <repository>  

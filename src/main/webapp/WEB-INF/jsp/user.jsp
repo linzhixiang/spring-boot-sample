@@ -14,7 +14,7 @@
     <h1>${message }</h1>
     <h1>用户列表--<a href="${pageContext.request.contextPath }/logout">退出登录</a>    </h1>
     <h2><a href="index">游戏主页</a></h2>
-    <h2><a href="jsp/blog/index">个人博客</a></h2>
+    <h2><a href="missYou/12">个人博客</a></h2>
     
     <h2>权限列表</h2>
     <shiro:authenticated>用户已经登录显示此内容<br/></shiro:authenticated><br/>

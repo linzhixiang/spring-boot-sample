@@ -2,7 +2,8 @@ package org.springboot.sample.security;
 
 import java.util.List;
 
-
+import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
 import org.apache.shiro.authc.AuthenticationToken;
@@ -18,8 +19,9 @@ import org.springboot.sample.dao.IUserDao;
 import org.springboot.sample.entity.Role;
 import org.springboot.sample.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
-import org.apache.commons.lang3.builder.ToStringStyle;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 /**
  * MyShiroRealm
  *

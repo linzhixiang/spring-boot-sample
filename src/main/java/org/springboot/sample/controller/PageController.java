@@ -71,4 +71,11 @@ public class PageController {
        // model.addAttribute("content", hello + "（第二种）");
         return model;
     }*/
+    
+    @RequestMapping("/missYou/12")
+    public String missYou(Model model){
+        // 页面位置 /WEB-INF/jsp/missYou/12.jsp
+        model.addAttribute("content", hello + "（第二种）");
+        return "missYou/12";
+    }
 }
